@@ -14,7 +14,8 @@ This project makes use of the following components:
 16	1 kilo ohms resistors
 
 Components set up:
--Potentiometer
+
+- Potentiometer
 The potentiometer has 3 pins, Ground, VCC, and output voltage pin to read the voltage. The Ground and the VCC pins are connected to Arduino's ground and VCC pins and the output pin is connected to Arduino's analog pin A5 to read the value of the potentiometer. Arduino will convert the analog voltage recieved from the potientiometer and convert it to values between 0 and 1023 with 0 being potentiometer at 0 and 1023 being potentiometer at 10k. 
 
 - 7-segment display (Cathode)
@@ -48,7 +49,7 @@ from 1010 to 1111					NP
 In this project, 2 7-segment decoder were used to control 2 7-segment displays.
 The first 7-segment decoder controlled the ones decimal number and second controlled the display that output tens decimal number.
 
--Arduino Uno R3
+- Arduino Uno R3
 The Arduino Uno R3 is the brain that controls the whole operation. The following code was uploaded to the Arduino that takes anlog values from potentiometer, converts it between 0 to 1023, determines a linear relationship between the analog values 0 to 1023 and the 2 7-segment display values 0 to 99, and sends appropriate values to the appropriate 7-segment decoders to makes the 7-segment display output correct numbers.
 
 Code:
@@ -81,7 +82,7 @@ In the void setup():
 In the void loop()
 The first line of code in the infinite loop reads the value from the PIN that the potentiometer is connected to. Then, the value is stored in pot_value.
 Next the equation:
-	(99/1023)*pot_value was used to determine a linear relationship between the 0 to 99 7-segement values and 0 to 1023 pot values. The equation was determined as below:
+	(99/1023) * pot_value was used to determine a linear relationship between the 0 to 99 7-segement values and 0 to 1023 pot values. The equation was determined as below:
 Since linear equation has the form :	y = mx + b
 where m is the slope and b is the y-intercept, y is the 7-segment values (0 to 99) and x is the potentiometer read value (0 to 1023)
 In this example, b = 0 since the relationship starts at y = x = 0
@@ -104,4 +105,5 @@ The for-loop once again is used to convert the decimal after the division to bin
 
 The above steps are repeated until the microcontroller is disconnected.
  tinkerCad link: https://www.tinkercad.com/things/585y8oRRCAH-r3-softwaretask1-ahmadalnoor/editel
+ Please note that the software has some glitches. Once you dial the potentiometer, wait for 1 second before the correct value gets displayed
 
