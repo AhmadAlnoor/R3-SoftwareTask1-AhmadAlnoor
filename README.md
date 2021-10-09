@@ -103,7 +103,5 @@ For example : Taking the above 78 as an example once again, 78/10 = 7 which is t
 The for-loop once again is used to convert the decimal after the division to binary value and send the i-th bit of the binary value to the i-th bit of the 7-segment decoder.
 
 The above steps are repeated until the microcontroller is disconnected.
- 
-
-
+ tinkerCad link: https://www.tinkercad.com/things/585y8oRRCAH-r3-softwaretask1-ahmadalnoor/editel
 
